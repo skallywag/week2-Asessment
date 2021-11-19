@@ -26,7 +26,7 @@
 const greetUser = username => {
     return `Welcome back ${username}`
 }
-greetUser('Sam')
+// console.log(greetUser('Sam'))
 
 
 //////////////////PROBLEM 2////////////////////
@@ -53,6 +53,27 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
+// const canWeDeliver = (zipCode) => {
+//     deliveryAreaZipCodes.forEach((element) => {
+//         if(zipCode !== element){
+//             return `You are not`
+//         }else if(zipCode === element){
+//             return `your in`
+//         }
+//     })
+// }
+// console.log(canWeDeliver(85205))
+
+// const canWeDeliver = (zipCode) => {
+//     for(let i = 0; i < deliveryAreaZipCodes.length; i++){
+//         if(zipCode !== deliveryAreaZipCodes){
+//             return `Sorry, we cant deliver to that address`
+//         }else if (zipCode === deliveryAreaZipCodes){
+//             return `You are in our delivery zone!`
+//         }
+//     }
+// }
+// console.log(canWeDeliver(85205))
 
 
 /* 
@@ -110,6 +131,17 @@ const deals = [
 
 //CODE HERE
 
+// const newDeal = deals[0].title = 10%
+// console.log(deals);
+
+
+// const newDeal = deal => {
+//   for(let i = 0; i < deal.length; i++){
+    
+//   }
+// }
+
+// console.log(newDeal(deals));
 
 
 /*
@@ -126,3 +158,4 @@ const deals = [
 */
 
 //CODE HERE
+

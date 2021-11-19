@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+let pizza = {
+    name: 'pepperoni',
+    price: '8.99',
+    category: 'entree',
+    popularity: 8,
+    rating: 5,
+    tags: ['gluten-free', 'most ordered', 'fastest-made']
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity);
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +61,8 @@
 
 //CODE HERE
 
+console.log(pizza.tags[1])
+// console.log(pizza['tags'][1]);
 
 /*
     Third, destructure the price off of the
@@ -64,6 +73,9 @@
 
 //CODE HERE
 
+let {price} = pizza
+
+console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -74,7 +86,9 @@
 
 //CODE HERE
 
+let {category} = pizza
 
+console.log(category);
 //////////////////PROBLEM 3////////////////////
 /* 
     Create an array with about 5 objects in it.
@@ -88,6 +102,8 @@
 */
 
 //CODE HERE
+
+let foodArr = [{name: 'steak', price: '20', category: 'entree', popularity: 10, rating: 10, tags: ['top ordered', 'USDA',]}, {name: 'fries', price: '4', category: 'side', popularity: 5, rating: 7, tags: ['salt free', 'fresh',]}, {name: 'mashed potatoes', price: '6', category: 'side', popularity: 9, rating: 6, tags: ['', '',]}, {name: 'salad', price: '2', category: 'side', popularity: 3, rating: 7, tags: ['top ordered', 'USDA',]}, {name: 'ice cream', price: '5', category: 'dessert', popularity: 9, rating: 8, tags: ['dairy free', '',]}]
 
 
 
@@ -105,8 +121,12 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+const filteredFood = foodArr.filter((tag) => {
+    if(tag.tags === 'top ordered'){
+        return filteredFood
+    }
+})
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
