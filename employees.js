@@ -27,7 +27,7 @@ class Employee {
         this.shifts = shifts
     }
     getSchedule(){
-        `${this.name} works on ${this.shifts}`
+      return `${this.name} works on ${this.shifts}`
     }
 }
 
@@ -43,7 +43,7 @@ class Employee {
 
 //CODE HERE
 
-let empOne = new Employee ('Jess', 'Shifts: weekday mornings, weekday afternoons')
+let empOne = new Employee ('Sam', 'Shifts: weekday mornings, weekday afternoons')
 
 
 /*
@@ -52,7 +52,7 @@ let empOne = new Employee ('Jess', 'Shifts: weekday mornings, weekday afternoons
 */
 
 //CODE HERE
-empOne.getSchedule()
+console.log(empOne.getSchedule())
 
 /*
     Make a copy of the empOne object
@@ -68,7 +68,8 @@ empOne.getSchedule()
 
 //CODE HERE
 
-let empTwo = {...empOne}
+let empTwo = {...empOne, name: 'Joe'}
+console.log(empTwo);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -98,15 +99,15 @@ let empTwo = {...empOne}
 class Manager extends Employee {
     constructor(name, shifts, employees){
         super(name, shifts)
-        this.name = name
-        this.shifts = shifts
-        this.employees = employees
+            this.employees = employees 
+            this.employee = []
     }    
     getEmployees(){
         console.log(`${this.name} manages ${this.employees}`);
     }
+
     addEmployee(emp){
-        employees.push(emp)
+       this.employee.push(emp)
     }
 }
 
@@ -123,7 +124,7 @@ class Manager extends Employee {
 
 //CODE HERE
 
-let manager = new Manager ('Winston', 'shifts: weekday mornings, weekday afternoons', 'employees: Cece and Schmidt')
+let manager = new Manager ('name: Winston', 'shifts: weekday mornings, weekday afternoons', 'employees: Cece and Schmidt')
 
 /*
     Call the `getEmployees` method on the
@@ -132,7 +133,7 @@ let manager = new Manager ('Winston', 'shifts: weekday mornings, weekday afterno
 
 //CODE HERE
 
-manager.getEmployees()
+console.log(manager.getEmployees())
 
 /*
     Call the `addEmployee` method on the 
@@ -142,7 +143,7 @@ manager.getEmployees()
 
 //CODE HERE 
 
-manager.addEmployee('Coach')
+console.log(manager.addEmployee('Coach'))
 
 /*
     Call the `getEmployees` method on the
@@ -152,4 +153,4 @@ manager.addEmployee('Coach')
 
 //CODE HERE
 
-manager.getEmployees()
+console.log(manager.getEmployees())

@@ -26,7 +26,7 @@
 const greetUser = username => {
     return `Welcome back ${username}`
 }
-// console.log(greetUser('Sam'))
+console.log(greetUser('Sam'))
 
 
 //////////////////PROBLEM 2////////////////////
@@ -53,29 +53,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
-// const canWeDeliver = (zipCode) => {
-//     deliveryAreaZipCodes.forEach((element) => {
-//         if(zipCode !== element){
-//             return `You are not`
-//         }else if(zipCode === element){
-//             return `your in`
-//         }
-//     })
-// }
-// console.log(canWeDeliver(85205))
-
-// const canWeDeliver = (zipCode) => {
-//     for(let i = 0; i < deliveryAreaZipCodes.length; i++){
-//         if(zipCode !== deliveryAreaZipCodes){
-//             return `Sorry, we cant deliver to that address`
-//         }else if (zipCode === deliveryAreaZipCodes){
-//             return `You are in our delivery zone!`
-//         }
-//     }
-// }
-// console.log(canWeDeliver(85205))
-
-
+const canWeDeliver = (zipCode) => {
+    const doesDeliver = deliveryAreaZipCodes.includes(zipCode)
+    if(doesDeliver === true){
+        return 'Your in our delivery'
+    } else {
+        return 'Sorry we can not deliver to your location'
+    }  
+}
+console.log(canWeDeliver(86314))
 /* 
     Problem 2 Continued
 
@@ -94,8 +80,21 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+// const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
-
+const canWeDeliverTwo = (zipCode) => {
+    let doesDeliver = false
+    deliveryAreaZipCodes.forEach((code) =>{
+        if (code === zipCode) 
+            doesDeliver = true
+    })
+        if(doesDeliver){
+            return 'Your in our delivery'
+        } else {
+            return 'Sorry we can not deliver to your location'
+    }  
+}
+console.log(canWeDeliverTwo(86314));
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -131,17 +130,9 @@ const deals = [
 
 //CODE HERE
 
-// const newDeal = deals[0].title = 10%
-// console.log(deals);
+deals[0].title = deals[0].title.replace('15', '10')
 
-
-// const newDeal = deal => {
-//   for(let i = 0; i < deal.length; i++){
-    
-//   }
-// }
-
-// console.log(newDeal(deals));
+console.log(deals);
 
 
 /*
@@ -159,3 +150,10 @@ const deals = [
 
 //CODE HERE
 
+// '   This deal lasts until the end of March! '
+
+const secDealDesc = deals[1].desc
+
+deals[1].desc = secDealDesc.trim().replace('March', 'April')
+
+console.log(deals);
